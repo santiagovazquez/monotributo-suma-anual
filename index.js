@@ -1,20 +1,31 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-const tabula = require('tabula-js');
-// const t = tabula(source.pdf);
-const CURRENT_DIR = process.cwd();
+const getBillTotal = require('./getBillTotal');
 
-console.log(`reading files from: ${CURRENT_DIR}`);
+const [,, ...args] = process.argv;
 
-const dirs = fs.readdirSync(CURRENT_DIR).filter(f => f.endsWith('.pdf') || f.endsWith('.PDF'));
+let rootDir = process.cwd();
+if (args.length > 0) {
+  rootDir = args[0];
+}
 
-dirs.forEach(f => {
-  const file = fs.statSync(`${CURRENT_DIR}/${f}`);
+const pdfsOnDir = fs.readdirSync(rootDir).filter(f => f.endsWith('.pdf') || f.endsWith('.PDF'));
 
-  console.log(file);
-});
+if (pdfsOnDir.length === 0 && args.length === 0) {
+  throw new Error(`No hay PDFs en el directorio actual. Podés especificar un directorio:\n mono-sum [DIR_PATH]`);
+} else if (pdfsOnDir.length === 0) {
+  throw new Error(`No hay PDFs en el directorio especificado: ${rootDir}`);
+}
 
-console.log(dirs);
+const tasks = pdfsOnDir.map(fileName => getBillTotal(`${rootDir}/${fileName}`));
 
-//t.extractCsv((err, data) => console.log(data));
+Promise.all(tasks)
+  .then( (billTotals) => {
+    console.log(`Suma total: `, billTotals.reduce((acum, i) => (acum + i), 0));
+  })
+  .catch(e => {
+    console.log(e);
+  });
+
+

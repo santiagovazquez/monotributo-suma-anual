@@ -8,7 +8,7 @@
   "author": "Santiago Vazquez",
   "license": "MIT",
   "dependencies": {
-    "tabula-js": "^1.0.1"
+    "pdf.js-extract": "^0.1.1"
   },
   "bin": {
     "mono-sum": "./index.js"
