@@ -10,5 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "tabula-js": "^1.0.1"
+  },
+  "bin": {
+    "mono-sum": "./index.js"
   }
 }

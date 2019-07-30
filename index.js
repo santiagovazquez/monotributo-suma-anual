@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs');
 const tabula = require('tabula-js');
 // const t = tabula(source.pdf);
