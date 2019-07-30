@@ -1,9 +1,21 @@
 # monotributo-suma-anual
 
-¿Sos monotributista y tenés que calcular el total de tu facturación del año? Tal vez esto te puede ayudar.
+Calcula la facturación anual de tu monotributo. 
 
 # Pasos
 
+1. Instalá el mono-sum
+````
+npm install -g santiagovazquez/monotributo-suma-anual
+````
+2. Corré el programa y pasale como argumento el path al directorio donde tenés descargadas tus facturas:
+````
+mono-sum [PATH_TO_DIR]
+````
+
+¡Listo!
+
+# Extra: descarga todas tus facturas desde la web de AFIP
 1. Si ya tenés todas tus facturas descargadas, salteá este paso. 
     1. Descargá todas tus facturas desde el sitio de afip:
        
@@ -26,11 +38,4 @@
             });
         ````
 
-2. Instalá el mono-sum
-````
-npm install -g santiagovazquez/monotributo-suma-anual
-````
-3. Corré el programa y pasale como argumento el path al directorio donde tenés descargadas tus facturas:
-````
-mono-sum [PATH_TO_DIR]
-````
+
