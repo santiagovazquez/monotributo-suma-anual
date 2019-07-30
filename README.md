@@ -28,7 +28,7 @@
 
 2. Instalá el mono-sum
 ````
-npm install -g monotributo-suma-anual
+npm install -g santiagovazquez/monotributo-suma-anual
 ````
 3. Corré el programa y pasale como argumento el path al directorio donde tenés descargadas tus facturas:
 ````
