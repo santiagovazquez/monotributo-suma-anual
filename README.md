@@ -2,20 +2,19 @@
 
 Calcula la facturación anual de tu monotributo. 
 
-# Pasos
+# Instalación
 
-1. Instalá el mono-sum
 ````
 npm install -g santiagovazquez/monotributo-suma-anual
 ````
-2. Corré el programa donde tengas tus facturas descargadas (o pasale como argumento el path al directorio):
+
+# Correr script
+Corré el programa donde tengas tus facturas descargadas (o pasale como argumento el path al directorio):
 ````
 mono-sum [PATH_TO_DIR]
 ````
 
-¡Listo!
-
-# Extra: descarga todas tus facturas desde la web de AFIP
+## Extra: descarga todas tus facturas desde la web de AFIP
 1. Descargá todas tus facturas desde el sitio de afip:
        
     ![alt text](https://raw.githubusercontent.com/santiagovazquez/monotributo-suma-anual/master/images/afip_paso_1.png)
